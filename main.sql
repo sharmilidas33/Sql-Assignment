@@ -6,7 +6,7 @@
   --('H437', 'Clairmont Hotel', 'Boston');
     
 CREATE TABLE Room (Room_No INT(10) PRIMARY KEY, 
-                    Hotel_No VARCHAR(10),
+                    Hotel_No VARCHAR(10) PRIMARY KEY,
                     Type CHAR(1) CHECK (Type IN ('S', 'N')), 
                     Price DECIMAL(10, 2),
                     FOREIGN KEY (Hotel_No) REFERENCES Hotel(Hotel_No) 
