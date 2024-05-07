@@ -48,9 +48,8 @@ CREATE TABLE Booking (
   Guest_No VARCHAR(10),
   Date_From DATE,
   Date_To DATE,
-  Room_No INT(10),
+  Room_No INT,
   PRIMARY KEY (Hotel_No, Guest_No, Date_From),
-  FOREIGN KEY (Hotel_No) REFERENCES Hotel(Hotel_No),
-  FOREIGN KEY (Guest_No) REFERENCES Guest(Guest_No),
-  FOREIGN KEY (Room_No) REFERENCES Room(Room_No)
-  );
+  FOREIGN KEY (Room_No, Hotel_No) REFERENCES Room(Room_No, Hotel_No),
+  FOREIGN KEY (Guest_No) REFERENCES Guest(Guest_No)
+);
