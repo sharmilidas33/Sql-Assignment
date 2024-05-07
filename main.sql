@@ -25,3 +25,10 @@ INSERT INTO Room (Room_No, Hotel_No, Type, Price)
    (1201, 'H193', 'N', 175.00),
    (257, 'H437', 'N', 140.00),
    (223, 'H437', 'N', 155.00);
+
+CREATE TABLE Guest (
+  Guest_No VARCHAR(10) PRIMARY KEY,
+  Name VARCHAR(100),
+  City VARCHAR(50)
+  );
+
