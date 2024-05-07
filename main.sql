@@ -43,3 +43,14 @@ VALUES
 ('G467', 'Robert Swift', 'Atlanta'),
 ('G190', 'Edward Cane', 'Baltimore');
 
+CREATE TABLE Booking (
+  Hotel_No VARCHAR(10),
+  Guest_No VARCHAR(10),
+  Date_From DATE,
+  Date_To DATE,
+  Room_No INT(10),
+  PRIMARY KEY (Hotel_No, Guest_No, Date_From),
+  FOREIGN KEY (Hotel_No) REFERENCES Hotel(Hotel_No),
+  FOREIGN KEY (Guest_No) REFERENCES Guest(Guest_No),
+  FOREIGN KEY (Room_No) REFERENCES Room(Room_No)
+  );
