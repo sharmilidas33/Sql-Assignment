@@ -34,3 +34,12 @@ CREATE TABLE Guest (
   City VARCHAR(50)
   );
 
+INSERT INTO Guest (Guest_No, Name, City)
+VALUES 
+('G256', 'Adam Wayne', 'Pittsburgh'),
+('G367', 'Tara Cummings', 'Baltimore'),
+('G879', 'Vanessa Parry', 'Pittsburgh'),
+('G230', 'Tom Hancock', 'Philadelphia'),
+('G467', 'Robert Swift', 'Atlanta'),
+('G190', 'Edward Cane', 'Baltimore');
+
