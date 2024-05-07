@@ -53,3 +53,16 @@ CREATE TABLE Booking (
   FOREIGN KEY (Room_No, Hotel_No) REFERENCES Room(Room_No, Hotel_No),
   FOREIGN KEY (Guest_No) REFERENCES Guest(Guest_No)
 );
+
+INSERT INTO Booking (Hotel_No, Guest_No, Date_From, Date_To, Room_No) VALUES
+ ('H111', 'G256', date('1999-08-10'), date('1999-08-15'), 412),
+('H111', 'G367', date('1999-08-18'), date('1999-08-21'), 412),
+('H235', 'G879', date('1999-09-05'), date('1999-09-12'), 1267),
+('H498', 'G230', date('1999-09-15'), date('1999-09-18'), 467),
+('H498', 'G256', date('1999-11-30'), date('1999-12-02'), 345),
+('H498', 'G467', date('1999-11-03'), date('1999-11-05'), 345),
+('H193', 'G190', date('1999-11-15'), date('1999-11-19'), 1001),
+('H193', 'G367', date('1999-09-12'), date('1999-09-14'), 1001),
+('H193', 'G367', date('1999-10-01'), date('1999-10-06'), 1201),
+('H437', 'G190', date('1999-10-04'), date('1999-10-06'), 223),
+('H437', 'G879', date('1999-09-14'), date('1999-09-17'), 223);
