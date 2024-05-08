@@ -50,6 +50,15 @@ WHERE Hotel.City = 'New York' AND STRFTIME('%m', Booking.Date_From) = '08';
 -- List the hotel names and room numbers of any hotel rooms that have not been booked.
 SELECT Hotel.Name AS Hotel_Name , Room.Room_No FROM Hotel
 INNER JOIN ROOM ON Hotel.Hotel_No = Room.Hotel_No
-WHERE NOT EXISTS (SELECT * FROM Booking WHERE Room_No= Room.Room_No);
+WHERE NOT EXISTS (SELECT * FROM Booking WHERE Booking.Room_No= Room.Room_No);
+
+-- List the hotel name and city of the hotel with the highest priced room.
+SELECT Hotel.Name AS Hotel_Name , Hotel.City AS City FROM Hotel
+INNER JOIN ROOM ON Hotel.Hotel_No = Room.Hotel_No
+WHERE Room.Price = (SELECT MAX(Price) FROM Room);
+
+
+
+
 
 
