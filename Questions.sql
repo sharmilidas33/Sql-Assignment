@@ -57,6 +57,15 @@ SELECT Hotel.Name AS Hotel_Name , Hotel.City AS City FROM Hotel
 INNER JOIN ROOM ON Hotel.Hotel_No = Room.Hotel_No
 WHERE Room.Price = (SELECT MAX(Price) FROM Room);
 
+-- List hotel names, room numbers, cities, and prices for hotels that have rooms with prices lower than the lowest priced room in a Boston hotel.
+SELECT Hotel.Name AS Hotel_Name, Room.Room_No, Hotel.City, Room.Price 
+FROM Hotel 
+INNER JOIN Room ON Hotel.Hotel_No = Room.Hotel_No 
+WHERE Room.Price < (
+    SELECT MIN(Price) 
+    FROM Room 
+    WHERE Hotel_No IN (SELECT Hotel_No FROM Hotel WHERE City = 'Boston')
+);
 
 
 
