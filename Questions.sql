@@ -67,7 +67,7 @@ WHERE Room.Price < (
     WHERE Hotel_No IN (SELECT Hotel_No FROM Hotel WHERE City = 'Boston')
 );
 
-
-
-
-
+-- List the average price of a room grouped by city.
+SELECT Hotel.City AS City , AVG(Room.Price) AS Price FROM Hotel
+INNER JOIN Room ON Hotel.Hotel_No= Room.Hotel_No
+GROUP BY Hotel.City;
