@@ -46,3 +46,5 @@ FROM Guest
 INNER JOIN Booking ON Guest.Guest_No = Booking.Guest_No 
 INNER JOIN Hotel ON Booking.Hotel_No = Hotel.Hotel_No 
 WHERE Hotel.City = 'New York' AND STRFTIME('%m', Booking.Date_From) = '08';
+
+
