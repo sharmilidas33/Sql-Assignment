@@ -47,4 +47,9 @@ INNER JOIN Booking ON Guest.Guest_No = Booking.Guest_No
 INNER JOIN Hotel ON Booking.Hotel_No = Hotel.Hotel_No 
 WHERE Hotel.City = 'New York' AND STRFTIME('%m', Booking.Date_From) = '08';
 
+-- List the hotel names and room numbers of any hotel rooms that have not been booked.
+SELECT Hotel.Name AS Hotel_Name , Room.Room_No FROM Hotel
+INNER JOIN ROOM ON Hotel.Hotel_No = Room.Hotel_No
+WHERE NOT EXISTS (SELECT * FROM Booking WHERE Room_No= Room.Room_No);
+
 
